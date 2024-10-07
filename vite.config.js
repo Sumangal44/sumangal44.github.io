@@ -14,8 +14,8 @@ export default defineConfig({
     },
 
     manifest: {
-      name: 'nextai',
-      short_name: 'nextai',
+      name: 'karandev',
+      short_name: 'dev',
       description: 'new age ai project 🚀',
       theme_color: '#000000',
     },
