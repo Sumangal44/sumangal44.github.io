@@ -16,17 +16,17 @@
     <header>
         <nav>
             <div class="logo">Alex.dev</div>
-            <ul class="nav-links">
+            <ul class="nav-links" role="navigation" aria-label="Main navigation">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <button class="theme-toggle" id="themeToggle">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
                     <i class="fas fa-sun"></i>
                 </button>
-                <button class="mobile-menu" id="mobileMenu">
+                <button class="mobile-menu" id="mobileMenu" aria-label="Toggle mobile navigation menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -42,8 +42,8 @@
                     <h1>Alex Johnson</h1>
                     <p class="subtitle">Full Stack Developer & <span class="typewriter" id="typewriter">UI Designer</span></p>
                     <div class="hero-buttons">
-                        <button class="neu-button">View My Work</button>
-                        <button class="neu-button">Download CV</button>
+                        <button class="neu-button" aria-label="View my portfolio projects">View My Work</button>
+                        <button class="neu-button" aria-label="Download my resume/CV">Download CV</button>
                     </div>
                 </div>
             </div>
@@ -87,8 +87,8 @@
                         <h3>E-Commerce Platform</h3>
                         <p>A full-featured e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.</p>
                         <div class="project-links">
-                            <a href="#" class="neu-button">Live Demo</a>
-                            <a href="#" class="neu-button">GitHub</a>
+                            <a href="#" class="neu-button" aria-label="View E-Commerce Platform live demo">Live Demo</a>
+                            <a href="#" class="neu-button" aria-label="View E-Commerce Platform source code on GitHub">GitHub</a>
                         </div>
                     </div>
                     <div class="neu-card project-card fade-in">
@@ -98,8 +98,8 @@
                         <h3>Analytics Dashboard</h3>
                         <p>A comprehensive analytics dashboard for tracking business metrics. Built with Vue.js and D3.js for interactive data visualization.</p>
                         <div class="project-links">
-                            <a href="#" class="neu-button">Live Demo</a>
-                            <a href="#" class="neu-button">GitHub</a>
+                            <a href="#" class="neu-button" aria-label="View Analytics Dashboard live demo">Live Demo</a>
+                            <a href="#" class="neu-button" aria-label="View Analytics Dashboard source code on GitHub">GitHub</a>
                         </div>
                     </div>
                     <div class="neu-card project-card fade-in">
@@ -109,8 +109,8 @@
                         <h3>Mobile Task Manager</h3>
                         <p>A cross-platform mobile app for task management built with React Native. Features offline sync and push notifications.</p>
                         <div class="project-links">
-                            <a href="#" class="neu-button">Live Demo</a>
-                            <a href="#" class="neu-button">GitHub</a>
+                            <a href="#" class="neu-button" aria-label="View Mobile Task Manager live demo">Live Demo</a>
+                            <a href="#" class="neu-button" aria-label="View Mobile Task Manager source code on GitHub">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -122,20 +122,20 @@
             <div class="container">
                 <h2 class="section-title fade-in">Get In Touch</h2>
                 <div class="contact-content">
-                    <form class="neu-card contact-form fade-in">
+                    <form class="neu-card contact-form fade-in" role="form" aria-label="Contact form">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder=" " required>
+                            <input type="text" id="name" placeholder=" " required aria-describedby="name-error">
                             <label for="name">Your Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder=" " required>
+                            <input type="email" id="email" placeholder=" " required aria-describedby="email-error">
                             <label for="email">Your Email</label>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder=" " required></textarea>
+                            <textarea id="message" rows="5" placeholder=" " required aria-describedby="message-error"></textarea>
                             <label for="message">Your Message</label>
                         </div>
-                        <button type="submit" class="neu-button" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="neu-button" style="width: 100%;" aria-label="Send contact message">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -147,10 +147,10 @@
         <div class="container">
             <div class="neu-card footer-content fade-in">
                 <div class="social-links">
-                    <a href="#" class="neu-button"><i class="fab fa-github"></i></a>
-                    <a href="#" class="neu-button"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="neu-button"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="neu-button"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="neu-button" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a>
+                    <a href="#" class="neu-button" aria-label="Connect with me on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="neu-button" aria-label="Follow me on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="neu-button" aria-label="View my Dribbble portfolio"><i class="fab fa-dribbble"></i></a>
                 </div>
                 <p>&copy; 2024 Alex Johnson. All rights reserved.</p>
             </div>

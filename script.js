@@ -1,4 +1,4 @@
-        // Theme Toggle
+// Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         const themeIcon = themeToggle.querySelector('i');
@@ -19,6 +19,7 @@
 
         function updateThemeIcon(theme) {
             themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
         }
 
         // Mobile Menu Toggle
@@ -28,7 +29,10 @@
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = mobileMenu.querySelector('i');
-            icon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+            const isOpen = navLinks.classList.contains('active');
+            icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            mobileMenu.setAttribute('aria-label', isOpen ? 'Close mobile navigation menu' : 'Open mobile navigation menu');
+            mobileMenu.setAttribute('aria-expanded', isOpen);
         });
 
         // Smooth Scrolling
@@ -41,6 +45,15 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+                
+                // Close mobile menu when nav link is clicked
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const mobileMenuIcon = mobileMenu.querySelector('i');
+                    mobileMenuIcon.className = 'fas fa-bars';
+                    mobileMenu.setAttribute('aria-label', 'Open mobile navigation menu');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
                 }
             });
         });
