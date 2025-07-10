@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Johnson - Full Stack Developer</title>
+    <title>sumangal karan - Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Alex.dev</div>
-            <ul class="nav-links">
+            <div class="logo">Devsumangal</div>
+            <ul class="nav-links" role="navigation" aria-label="Main navigation">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <button class="theme-toggle" id="themeToggle">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
                     <i class="fas fa-sun"></i>
                 </button>
-                <button class="mobile-menu" id="mobileMenu">
+                <button class="mobile-menu" id="mobileMenu" aria-label="Toggle mobile navigation menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -39,11 +41,12 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="neu-card hero-content fade-in">
-                    <h1>Alex Johnson</h1>
-                    <p class="subtitle">Full Stack Developer & <span class="typewriter" id="typewriter">UI Designer</span></p>
+                    <h1>sumangal karan</h1>
+                    <p class="subtitle">Full Stack Developer & <span class="typewriter" id="typewriter">UI
+                            Designer</span></p>
                     <div class="hero-buttons">
-                        <button class="neu-button">View My Work</button>
-                        <button class="neu-button">Download CV</button>
+                        <button class="neu-button" id="viewWorkBtn" aria-label="View my portfolio projects">View My Work</button>
+                        <button class="neu-button" id="downloadCvBtn" aria-label="Download my resume/CV">Download CV</button>
                     </div>
                 </div>
             </div>
@@ -55,8 +58,11 @@
                 <h2 class="section-title fade-in">About Me</h2>
                 <div class="about-content">
                     <div class="neu-card about-text fade-in">
-                        <p>I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that make a difference. I specialize in modern web technologies and love turning complex problems into simple, beautiful designs.</p>
-                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or enjoying a good cup of coffee while planning my next project.</p>
+                        <p>I'm a passionate full-stack developer with 5+ years of experience creating digital solutions
+                            that make a difference. I specialize in modern web technologies and love turning complex
+                            problems into simple, beautiful designs.</p>
+                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open source
+                            projects, or enjoying a good cup of coffee while planning my next project.</p>
                         <div class="skills">
                             <span class="neu-inset skill-tag">JavaScript</span>
                             <span class="neu-inset skill-tag">React</span>
@@ -85,10 +91,12 @@
                             <i class="fas fa-shopping-cart"></i>
                         </div>
                         <h3>E-Commerce Platform</h3>
-                        <p>A full-featured e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.</p>
+                        <p>A full-featured e-commerce solution built with React, Node.js, and MongoDB. Features include
+                            user authentication, payment processing, and admin dashboard.</p>
                         <div class="project-links">
-                            <a href="#" class="neu-button">Live Demo</a>
-                            <a href="#" class="neu-button">GitHub</a>
+                            <a href="#" class="neu-button" aria-label="View E-Commerce Platform live demo">Live Demo</a>
+                            <a href="#" class="neu-button"
+                                aria-label="View E-Commerce Platform source code on GitHub">GitHub</a>
                         </div>
                     </div>
                     <div class="neu-card project-card fade-in">
@@ -96,10 +104,12 @@
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>Analytics Dashboard</h3>
-                        <p>A comprehensive analytics dashboard for tracking business metrics. Built with Vue.js and D3.js for interactive data visualization.</p>
+                        <p>A comprehensive analytics dashboard for tracking business metrics. Built with Vue.js and
+                            D3.js for interactive data visualization.</p>
                         <div class="project-links">
-                            <a href="#" class="neu-button">Live Demo</a>
-                            <a href="#" class="neu-button">GitHub</a>
+                            <a href="#" class="neu-button" aria-label="View Analytics Dashboard live demo">Live Demo</a>
+                            <a href="#" class="neu-button"
+                                aria-label="View Analytics Dashboard source code on GitHub">GitHub</a>
                         </div>
                     </div>
                     <div class="neu-card project-card fade-in">
@@ -107,10 +117,12 @@
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h3>Mobile Task Manager</h3>
-                        <p>A cross-platform mobile app for task management built with React Native. Features offline sync and push notifications.</p>
+                        <p>A cross-platform mobile app for task management built with React Native. Features offline
+                            sync and push notifications.</p>
                         <div class="project-links">
-                            <a href="#" class="neu-button">Live Demo</a>
-                            <a href="#" class="neu-button">GitHub</a>
+                            <a href="#" class="neu-button" aria-label="View Mobile Task Manager live demo">Live Demo</a>
+                            <a href="#" class="neu-button"
+                                aria-label="View Mobile Task Manager source code on GitHub">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -122,20 +134,22 @@
             <div class="container">
                 <h2 class="section-title fade-in">Get In Touch</h2>
                 <div class="contact-content">
-                    <form class="neu-card contact-form fade-in">
+                    <form class="neu-card contact-form fade-in" role="form" aria-label="Contact form">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder=" " required>
+                            <input type="text" id="name" placeholder=" " required aria-describedby="name-error">
                             <label for="name">Your Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder=" " required>
+                            <input type="email" id="email" placeholder=" " required aria-describedby="email-error">
                             <label for="email">Your Email</label>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder=" " required></textarea>
+                            <textarea id="message" rows="5" placeholder=" " required
+                                aria-describedby="message-error"></textarea>
                             <label for="message">Your Message</label>
                         </div>
-                        <button type="submit" class="neu-button" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="neu-button" style="width: 100%;"
+                            aria-label="Send contact message">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -147,16 +161,38 @@
         <div class="container">
             <div class="neu-card footer-content fade-in">
                 <div class="social-links">
-                    <a href="#" class="neu-button"><i class="fab fa-github"></i></a>
-                    <a href="#" class="neu-button"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="neu-button"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="neu-button"><i class="fab fa-dribbble"></i></a>
+                    <a href="https://github.com/Sumangal44" class="neu-button" aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-github"  ></i></a>
+                    <a href="https://www.linkedin.com/in/sumangal-karan" class="neu-button" aria-label="Connect with me on LinkedIn" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/SumangalKaran" class="neu-button" aria-label="Follow me on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="neu-button" aria-label="View my Dribbble portfolio" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-dribbble"></i></a>
                 </div>
-                <p>&copy; 2024 Alex Johnson. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> Sumangal Karan. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content neu-card">
+            <div class="modal-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Message Sent Successfully!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Thank you <span id="modalName"></span>! Your message has been sent successfully. I'll get back to you soon.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="neu-button" id="closeModal" aria-label="Close success message">Close</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script src="script.js"></script>
+
 </html>

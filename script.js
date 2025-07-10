@@ -1,4 +1,4 @@
-        // Theme Toggle
+// Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         const themeIcon = themeToggle.querySelector('i');
@@ -19,6 +19,7 @@
 
         function updateThemeIcon(theme) {
             themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
         }
 
         // Mobile Menu Toggle
@@ -28,7 +29,10 @@
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = mobileMenu.querySelector('i');
-            icon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+            const isOpen = navLinks.classList.contains('active');
+            icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            mobileMenu.setAttribute('aria-label', isOpen ? 'Close mobile navigation menu' : 'Open mobile navigation menu');
+            mobileMenu.setAttribute('aria-expanded', isOpen);
         });
 
         // Smooth Scrolling
@@ -41,6 +45,15 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+                
+                // Close mobile menu when nav link is clicked
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const mobileMenuIcon = mobileMenu.querySelector('i');
+                    mobileMenuIcon.className = 'fas fa-bars';
+                    mobileMenu.setAttribute('aria-label', 'Open mobile navigation menu');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
                 }
             });
         });
@@ -119,6 +132,10 @@
 
         // Form Submission
         const contactForm = document.querySelector('.contact-form');
+        const successModal = document.getElementById('successModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalName = document.getElementById('modalName');
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -128,9 +145,44 @@
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
-            // Simulate form submission
-            alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon.`);
+            // Show success modal
+            modalName.textContent = name;
+            showModal();
+            
+            // Reset form
             contactForm.reset();
+        });
+
+        function showModal() {
+            successModal.classList.add('show');
+            successModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            closeModalBtn.focus();
+        }
+
+        function hideModal() {
+            successModal.classList.remove('show');
+            setTimeout(() => {
+                successModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close modal events
+        closeModalBtn.addEventListener('click', hideModal);
+
+        // Close modal when clicking outside
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                hideModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && successModal.classList.contains('show')) {
+                hideModal();
+            }
         });
 
         // Parallax Effect for Hero
@@ -152,4 +204,37 @@
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) scale(1)';
             });
+        });
+
+        // Update footer year automatically
+        function updateFooterYear() {
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = currentYear;
+            }
+        }
+
+        // Update year on page load
+        updateFooterYear();
+
+        // Hero button functionality
+        const viewWorkBtn = document.getElementById('viewWorkBtn');
+        const downloadCvBtn = document.getElementById('downloadCvBtn');
+
+        // View My Work button - scroll to projects section
+        viewWorkBtn.addEventListener('click', () => {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                projectsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+
+        // Download CV button - you can replace this URL with your actual CV
+        downloadCvBtn.addEventListener('click', () => {
+            // Option 1: Direct download (replace with your CV URL)
+            window.open('./cv.pdf', '_blank');
         });
