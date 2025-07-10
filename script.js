@@ -238,3 +238,76 @@
             // Option 1: Direct download (replace with your CV URL)
             window.open('./cv.pdf', '_blank');
         });
+
+        // Enhanced navigation link animations
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        
+        navLinksAll.forEach(link => {
+            // Add click ripple effect
+            link.addEventListener('click', function(e) {
+                // Create ripple element
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    if (ripple.parentNode) {
+                        ripple.parentNode.removeChild(ripple);
+                    }
+                }, 600);
+            });
+            
+            // Add hover sound effect (optional - can be enabled later)
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+            
+            .nav-link {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+            
+            .nav-link:hover {
+                transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+            
+            .nav-link:active {
+                transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                transform: translateY(1px) scale(0.98) !important;
+            }
+        `;
+        document.head.appendChild(style);
